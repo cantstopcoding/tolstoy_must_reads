@@ -20,10 +20,17 @@ class TolstoyMustReads::Book
     end
 
     def self.scrape_books
+        books = []
+        books << scrape_website
+        
         # Go to the website, find the book
         # Extract the properties
         # Instantiate a book
-        # 
-        [books]
+        books
+    end
+
+    def self.scrape_website
+        page = "https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/"
+        doc = Nokogiri::HTML(open(page))
     end
 end
