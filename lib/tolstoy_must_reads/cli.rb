@@ -7,10 +7,7 @@ class TolstoyMustReads::CLI
 
     def list_books
         puts 'Welcome! Here is a list of Tolstoy must reads:'
-        puts <<-DOC.gsub /^\s*/, ''
-        1. Anna Karenina (1887)
-        2. War and Peace (1869)
-        DOC
+        @book = TolstoyMustReads::Book.all 
     end
 
     def summary 

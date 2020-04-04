@@ -38,3 +38,5 @@ What is a book?
 
 A book has a name
 A book has a summary
+A book has a URL
+A book has an availability
