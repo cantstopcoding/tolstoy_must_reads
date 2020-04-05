@@ -39,3 +39,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the TolstoyMustReads project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/tolstoy_must_reads/blob/master/CODE_OF_CONDUCT.md).
+
+[![Run on Repl.it](https://repl.it/badge/github/cantstopcoding/tolstoy_must_reads)](https://repl.it/github/cantstopcoding/tolstoy_must_reads)
