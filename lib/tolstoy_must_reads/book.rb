@@ -32,9 +32,11 @@ class TolstoyMustReads::Book
     def self.scrape_website
         page = "https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/"
         doc = Nokogiri::HTML(open(page))
-        names = doc.search("h2.titlestyled__TitleWrapper-sc-11j6mg5-0.duRXkN").text
-        s
-        summaries = doc.search("p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd").text
-        binding.pry 
+        
+        book = self.new
+        book.name = doc.search("h2.titlestyled__TitleWrapper-sc-11j6mg5-0.duRXkN").text
+        book.summary = doc.search("p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd").text
+        
+        book 
     end
 end

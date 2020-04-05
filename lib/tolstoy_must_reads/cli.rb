@@ -9,7 +9,7 @@ class TolstoyMustReads::CLI
         puts 'Welcome! Here is a list of Tolstoy must reads:'
         @books = TolstoyMustReads::Book.all 
         @books.each.with_index(1) do |book, i|
-            puts "#{i}. #{book.name} - #{book.availability}"
+            puts "#{i}. #{book.name}"
         end
     end
 
@@ -18,11 +18,11 @@ class TolstoyMustReads::CLI
         while input !=  "exit"
             puts "Enter the number of the book you would like a summary of or type list to see the books agin or type exit:"
             input = gets.strip.downcase
-            
-            if input.to_i > 0
+            int = input.to_i 
+            # Refactor with #valid_input?
+            if int > 0 && int <= @books.length 
                 the_book = @books[input.to_i - 1] 
-                puts "#{the_book.name} - #{the_book.availability}"
-                binding.pry
+                puts "#{the_book.summary}"
             elsif input == "list"
                 list_books
             else
