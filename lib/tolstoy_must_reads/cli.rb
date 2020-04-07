@@ -1,12 +1,12 @@
 class TolstoyMustReads::CLI
     def call
         puts 'Welcome! Here is a list of Tolstoy must reads:'
-        get_books
+        fetch_books
         list_books
         user_interface # Or menu?
     end
 
-    def get_books 
+    def fetch_books 
         @books = TolstoyMustReads::Book.all
     end
 

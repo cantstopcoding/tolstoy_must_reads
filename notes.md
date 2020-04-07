@@ -45,3 +45,13 @@ Classes
     -CLI
         -Scraper
             -Book        
+
+
+books = TolstoyMustReads.new("https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/").scrape #=> <Book>
+
+books.first.name #=> "Anna Karrenina"
+
+1. We need a Scraper class
+2. That book needs to intantiate a book
+3. We need to scrape the summary of that book
+4. We need to scrape the summary of that book and add them to that instance
