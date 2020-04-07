@@ -18,7 +18,8 @@ class TolstoyMustReads::CLI
 
     def user_interface 
        @input = nil 
-        while @input !=  "exit"
+        
+       while @input !=  "exit"
             puts "\nEnter the number of the book you would like a summary of or type list to see the books agin or type exit:"
             
             @input = gets.strip.downcase
