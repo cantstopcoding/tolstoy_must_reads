@@ -1,14 +1,26 @@
 class TolstoyMustReads::Book
     attr_accessor :name, :summary
     
-    def self.all
-        books = TolstoyMustReads::Scraper.scrape_all.collect do |arr|
-            book = self.new
-            book.name = arr[0]
-            book.summary = arr[1]
-            book 
-        end
+    @@all = []
+   
+    def initialize(name, summary)
+        @name = name 
+        @summary = summary
+        save
     end
+    
+    def self.all
+        TolstoyMustReads::Scraper.scrape_all.each do |titleEl|
+            title = titleEl.text
+            summary = titleEl.next_element.text
+            self.new(title, summary)
+        end 
+        @@all 
+    end
+
+    def save 
+        @@all << self
+    end 
 end
 
 

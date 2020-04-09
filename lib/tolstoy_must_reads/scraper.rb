@@ -1,24 +1,9 @@
+
 class TolstoyMustReads::Scraper
     def self.scrape_all
         page = "https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/"
-        @@doc = Nokogiri::HTML(open(page))
-        
-        self.scrape_names_and_summaries
-        self.zip_names_and_summaries
-    end
-
-    def self.scrape_names_and_summaries
-        @@doc.css("div.grid__Grid-u88k9r-0.article-grid__ArticleGrid-sc-5b0lbv-0.article-jsonstyled__ArticleV2ContentGrid-mn7kve-2.hquILT").collect do |parent_tag|
-            names_tag = "div.cell__Cell-g0fptp-0.fORVIn"
-            summaries_tag = "p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd"
-            
-            @@names = parent_tag.css(names_tag).collect {|n| n.text}
-            @@summaries = parent_tag.css(summaries_tag).collect {|s| s.text}
-        end
-    end
-
-    def self.zip_names_and_summaries
-        @@names.zip(@@summaries)
+        doc = Nokogiri::HTML(open(page))
+        doc.css("div.grid__Grid-u88k9r-0.article-grid__ArticleGrid-sc-5b0lbv-0.article-jsonstyled__ArticleV2ContentGrid-mn7kve-2.hquILT .fORVIn")
     end
 end 
 

@@ -55,3 +55,11 @@ books.first.name #=> "Anna Karrenina"
 2. That book needs to intantiate a book
 3. We need to scrape the summary of that book
 4. We need to scrape the summary of that book and add them to that instance
+
+
+
+I want to refactor the zipping and do an object at a time
+And I want to do my CLI better
+	-Having a hard time because of the the goodbye method
+	-I want to simplify the CLI even more
+I want to find a way where I can only call the website once
