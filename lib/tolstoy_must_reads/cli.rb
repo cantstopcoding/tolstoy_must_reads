@@ -3,7 +3,7 @@ class TolstoyMustReads::CLI
         puts 'Welcome! Here is a list of Tolstoy must reads:'
         fetch_books
         list_books
-        user_interface # Or menu?
+        menu
     end
 
     def fetch_books 
@@ -16,7 +16,7 @@ class TolstoyMustReads::CLI
         end
     end
 
-    def user_interface 
+    def menu
        @input = nil 
         
        while @input !=  "exit"

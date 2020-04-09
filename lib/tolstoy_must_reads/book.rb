@@ -2,14 +2,22 @@ class TolstoyMustReads::Book
     attr_accessor :name, :summary
     
     def self.all
-        books = TolstoyMustReads::Scraper.fetch.collect do |b|
+        books = TolstoyMustReads::Scraper.scrape_all.collect do |arr|
             book = self.new
-            book.name = b[0]
-            book.summary = b[1]
-            book  
+            book.name = arr[0]
+            book.summary = arr[1]
+            book 
+            binding.pry
         end
     end
 end
+
+
+# I want to make an object one at a time
+# I want to pass that object in the #all method everytime an object is created
+# I want to make sure all of the objects I scraped are passed in the #all method
+# I don't want to zip, I want to scrape the row
+
 
 
 

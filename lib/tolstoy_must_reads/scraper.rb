@@ -1,15 +1,25 @@
 class TolstoyMustReads::Scraper
-    def self.fetch
+    def self.scrape_all
         page = "https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/"
-        doc = Nokogiri::HTML(open(page))
+        @@doc = Nokogiri::HTML(open(page))
         
-        names = doc.css("h2.titlestyled__TitleWrapper-sc-11j6mg5-0.duRXkN").collect do |n|
-            n.text
-        end
-        summaries = doc.css("p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd").collect do |s|
-            s.text
-        end
-        names.zip(summaries)
+        self.scrape_names
+        self.scrape_summaries
+        self.zip_n_and_s
+    end
+
+    def self.scrape_names
+        selector = "h2.titlestyled__TitleWrapper-sc-11j6mg5-0.duRXkN"
+        @@names = @@doc.css(selector).collect {|n| n.text}      
+    end
+
+    def self.scrape_summaries
+        selector = "p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd" 
+        @@summaries = @@doc.css(selector).collect {|s| s.text}
+    end
+
+    def self.zip_n_and_s
+        @@names.zip(@@summaries)
     end
 end 
 
