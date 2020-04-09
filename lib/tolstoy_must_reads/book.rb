@@ -7,7 +7,6 @@ class TolstoyMustReads::Book
             book.name = arr[0]
             book.summary = arr[1]
             book 
-            binding.pry
         end
     end
 end

@@ -3,22 +3,21 @@ class TolstoyMustReads::Scraper
         page = "https://theculturetrip.com/europe/russia/articles/the-10-best-books-by-leo-tolstoy-you-have-to-read/"
         @@doc = Nokogiri::HTML(open(page))
         
-        self.scrape_names
-        self.scrape_summaries
-        self.zip_n_and_s
+        self.scrape_names_and_summaries
+        self.zip_names_and_summaries
     end
 
-    def self.scrape_names
-        selector = "h2.titlestyled__TitleWrapper-sc-11j6mg5-0.duRXkN"
-        @@names = @@doc.css(selector).collect {|n| n.text}      
+    def self.scrape_names_and_summaries
+        @@doc.css("div.grid__Grid-u88k9r-0.article-grid__ArticleGrid-sc-5b0lbv-0.article-jsonstyled__ArticleV2ContentGrid-mn7kve-2.hquILT").collect do |parent_tag|
+            names_tag = "div.cell__Cell-g0fptp-0.fORVIn"
+            summaries_tag = "p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd"
+            
+            @@names = parent_tag.css(names_tag).collect {|n| n.text}
+            @@summaries = parent_tag.css(summaries_tag).collect {|s| s.text}
+        end
     end
 
-    def self.scrape_summaries
-        selector = "p.paragraph-wraperstyled__ParagraphWrapper-sc-1xg03x1-0.gnTgqd" 
-        @@summaries = @@doc.css(selector).collect {|s| s.text}
-    end
-
-    def self.zip_n_and_s
+    def self.zip_names_and_summaries
         @@names.zip(@@summaries)
     end
 end 
