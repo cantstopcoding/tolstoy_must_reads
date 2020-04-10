@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["cantstopcoding"]
   spec.email         = ["jonathan_koss@yahoo.com"]
 
-  spec.summary       = %q{will complete later}
-  spec.description   = %q{will complete later}
+  spec.summary       = %q{Provide a list of must reads by Tolstoy and pick the book you want a summary of.}
+  spec.description   = %q{Provide user Tolstoys 10 must read books. The user will be asked to pick the number of the book he would like a summary of, or type "list" to see the books again, or type "exit" to leave. If anything else is typed, "Invalid Input" will be returned. After the summary, the list, or "Invalid Input" is returned, the user will be asked, again, what book summary he/she wants to see or to type list, or to exit.}
   spec.homepage      = "https://github.com/cantstopcoding/tolstoy_must_reads"
   spec.license       = "MIT"
 

@@ -1,6 +1,6 @@
 # TolstoyMustReads
 
-Provide user Tolstoy's 10 must read books. The user will be asked to pick the number of the book he would like a summary of, or type "list" to see the books again, or type "exit" to leave. If anything else is typed, "Invalid Input" will be returned. After the summary, the list, or "Invalid Input" is returned, the user will be asked, again, what book summary he/she wants to see or to type list, or to exit.  
+Provide a list of must reads by Tolstoy and pick the book you want a summary of! 
 
 ## Installation
 
@@ -18,9 +18,11 @@ Or install it yourself as:
 
     $ gem install tolstoy_must_reads
 
+You have to go to https://github.com/cantstopcoding/tolstoy_must_reads. Click on "Clone or download" and copy the URL. Open up the terminal and type git clone git@github.com:cantstopcoding/tolstoy_must_reads.git. After cloning the git repo, change your directory by typing cd tolstoy_must_reads. When you're in the tolstoy_must_reads directory type "code ." and that should get you into your code editor.
+
 ## Usage
 
-TODO: Write usage instructions here
+Provide user Tolstoy's 10 must read books. The user will be asked to pick the number of the book he would like a summary of, or type "list" to see the books again, or type "exit" to leave. If anything else is typed, "Invalid Input" will be returned. After the summary, the list, or "Invalid Input" is returned, the user will be asked, again, what book summary he/she wants to see or to type list, or to exit. 
 
 ## Development
 
