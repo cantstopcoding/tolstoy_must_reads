@@ -1,6 +1,6 @@
 # TolstoyMustReads
 
-Provid user Tolstoy's must read books and provide a summary for the book the user picks.
+Provide user Tolstoy's 10 must read books. The user will be asked to pick the number of the book he would like a summary of, or type "list" to see the books again, or type "exit" to leave. If anything else is typed, "Invalid Input" will be returned. After the summary, the list, or "Invalid Input" is returned, the user will be asked, again, what book summary he/she wants to see or to type list, or to exit.  
 
 ## Installation
 
