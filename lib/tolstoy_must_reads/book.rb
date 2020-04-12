@@ -13,7 +13,7 @@ class TolstoyMustReads::Book
         @@all << self
     end 
     
-    def self.all
+    def self.all # Should this be a class or instance method?
         self.create_objects
         @@all 
     end
