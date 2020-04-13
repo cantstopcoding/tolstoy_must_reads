@@ -13,12 +13,12 @@ class TolstoyMustReads::Book
         @@all << self
     end 
     
-    def self.all # Should this be a class or instance method?
+    def self.all 
         self.create_objects
         @@all 
     end
 
-    def self.create_objects
+    def self.create_objects 
         TolstoyMustReads::Scraper.scrape_all.each do |titleEl|
             title = titleEl.text
             summary = titleEl.next_element.text

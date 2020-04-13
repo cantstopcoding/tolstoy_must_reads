@@ -12,9 +12,9 @@ class TolstoyMustReads::CLI
         list_books
         menu
     end
-
+     
     def fetch_books 
-        @books = TolstoyMustReads::Book.all # Why an instance as opposed to class
+        @books = TolstoyMustReads::Book.all 
     end
 
     def list_books
@@ -24,30 +24,29 @@ class TolstoyMustReads::CLI
     end
 
     def menu
-    #    @input = nil Do I need to define it?
-        
-       while @input !=  "exit"
+       while true 
             puts "\nEnter the number of the book you would like a summary of or type list to see the books agin or type exit:"
-            @input = gets.strip.downcase
+            input = gets.strip.downcase
 
-            if valid_input 
-                print_summary
-            elsif @input.downcase == "list"
+            if valid_int?(input)
+                print_summary_for(input)
+            elsif input.downcase == "list"
                 list_books
-            elsif @input.downcase == "exit"
+            elsif input.downcase == "exit"
                 goodbye
+                break
             else
                 invalid_inp 
             end
         end
     end
 
-    def valid_input
-        @input.to_i <= @books.length && @input.to_i > 0
+    def valid_int?(input)
+        input.to_i <= @books.length && input.to_i > 0
     end
 
-    def print_summary
-        book = @books[@input.to_i - 1] 
+    def print_summary_for(input)
+        book = @books[input.to_i - 1] 
         puts "\n#{book.summary}"
     end
     
