@@ -26,9 +26,9 @@ class TolstoyMustReads::CLI
 
             if valid_int?(input)
                 print_summary_for(input)
-            elsif input.downcase == "list"
+            elsif input == "list"
                 list_books
-            elsif input.downcase == "exit"
+            elsif input == "exit"
                 goodbye
                 break
             else

@@ -15,7 +15,7 @@ class TolstoyMustReads::Book
     
     def self.all 
         self.create_objects
-        @@all 
+        @@all #.sort_by {|obj| obj.name}
     end
 
     def self.create_objects 
